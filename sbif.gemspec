@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Sbif::VERSION
   spec.authors       = ["Paulo Tarud"]
   spec.email         = ["paulo@sidekick.cl"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{API Client for Chile SBIF}
+  spec.description   = %q{API Client for Chile SBIF}
   spec.homepage      = ""
   spec.license       = "MIT"
 
