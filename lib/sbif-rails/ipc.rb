@@ -1,6 +1,6 @@
-module Sbif
+module SbifRails
   module Ipc
-    extend Sbif::Base
+    extend SbifRails::Base
 
     def self.name
       "ipc"

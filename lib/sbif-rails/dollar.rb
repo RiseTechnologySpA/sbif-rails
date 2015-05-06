@@ -1,6 +1,6 @@
-module Sbif
+module SbifRails
   module Dollar
-    extend Sbif::Base
+    extend SbifRails::Base
 
     def self.name
       "dolar"

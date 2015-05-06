@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sbif/version'
+require 'sbif-rails/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "sbif"
-  spec.version       = Sbif::VERSION
+  spec.name          = "sbif-rails"
+  spec.version       = SbifRails::VERSION
   spec.authors       = ["Paulo Tarud"]
   spec.email         = ["paulo@sidekick.cl"]
   spec.summary       = %q{API Client for Chile SBIF}

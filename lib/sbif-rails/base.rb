@@ -2,10 +2,13 @@ require 'net/http'
 require 'json'
 require 'date'
 
-module Sbif
+module SbifRails
   module Base
-    API_KEY = ''
-    URL = 'http://api.sbif.cl/api-sbifv3/recursos_api'
+    URL = 'http://api.sbif-rails.cl/api-sbifv3/recursos_api'
+
+    def config
+      @config ||= SbifRails.config
+    end
 
     def get_current
       current_time = Time.now
@@ -17,7 +20,7 @@ module Sbif
       currencies_response = Array.new
       # looking for business day
       loop do
-        url = "#{URL}/#{name}/#{date.year.to_s}/#{date.month.to_s}/dias/#{date.day}?apikey=#{API_KEY}&formato=json"
+        url = "#{URL}/#{name}/#{date.year.to_s}/#{date.month.to_s}/dias/#{date.day}?apikey=#{config.api_key}&formato=json"
         uri = URI(url)
         response = Net::HTTP.get uri
         currencies_response = JSON.parse response
@@ -29,7 +32,7 @@ module Sbif
     end
 
     def get_by_month(year, month)
-      url = "#{URL}/#{self.name}/#{year.to_s}/#{month.to_s}?apikey=#{API_KEY}&formato=json"
+      url = "#{URL}/#{self.name}/#{year.to_s}/#{month.to_s}?apikey=#{config.api_key}&formato=json"
       uri = URI(url)
       response = Net::HTTP.get uri
       currencies_response = JSON.parse response
@@ -43,7 +46,7 @@ module Sbif
     end
 
     def get_by_year(year)
-      url = "#{URL}/#{self.name}/#{year.to_s}?apikey=#{API_KEY}&formato=json"
+      url = "#{URL}/#{self.name}/#{year.to_s}?apikey=#{config.api_key}&formato=json"
       uri = URI(url)
       response = Net::HTTP.get uri
       currencies_response = JSON.parse response

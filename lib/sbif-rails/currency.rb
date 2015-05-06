@@ -1,4 +1,4 @@
-module Sbif
+module SbifRails
   class Currency
     attr_accessor :date, :value
 
