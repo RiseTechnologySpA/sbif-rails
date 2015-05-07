@@ -1,11 +1,11 @@
 require 'active_support/configurable'
 
 module SbifRails
-  def configure &block
+  def self.configure &block
     yield @config ||= SbifRails::Configuration.new
   end
 
-  def config
+  def self.config
     @config ||= SbifRails::Configuration.new
   end
 

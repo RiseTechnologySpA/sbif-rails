@@ -9,7 +9,7 @@ Description:
   Creates an initializer file for Sbif API KEY configuration at config/initializers.
 DESC
       def copy_config_file
-        template 'sbif_api_key_config.rb', 'config/initializers/sbif-rails.rb'
+        template 'sbif_api_key_config.rb', 'config/initializers/sbif_rails.rb'
       end
     end
   end
