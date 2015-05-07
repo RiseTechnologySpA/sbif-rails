@@ -1,6 +1,7 @@
 module SbifRails
   module Uf
     extend SbifRails::Base
+    extend SbifRails::Base::GetByDayMethods
 
     def self.name
       "uf"
