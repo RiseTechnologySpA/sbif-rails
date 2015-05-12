@@ -40,8 +40,8 @@ module SbifRails
 
     module GetByDayMethods
       def get_current
-        current_time = Time.now
-        return get_by_day(current_time.year, current_time.month, current_time.day)
+        today = Date.today
+        return get_by_day(today.year, today.month, today.day)
       end
 
       def get_by_day(year, month, day)
@@ -53,8 +53,8 @@ module SbifRails
           uri = URI(url)
           response = Net::HTTP.get uri
           currencies_response = JSON.parse response
-          date -= 1
           break if currencies_response["#{plural_name}"]
+					date -= 1
         end
         currency = SbifRails::Currency.new(date,currencies_response["#{plural_name}"][0]['Valor'].gsub('.', '').gsub(',', '.').to_f)
         return currency

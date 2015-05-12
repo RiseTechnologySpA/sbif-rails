@@ -42,27 +42,27 @@ This method gets the current value of Dollar, it return a Currency object that h
 value of type float and date of type date.
 
 ```ruby
-Sbif::Dollar.get_current
+SbifRails::Dollar.get_current
 ```
 This method gets all values of Dollar given a specific day, it needs three arguments of type integer, year, month and day,
 it return an Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Dollar.get_by_date(year,month,day)
+SbifRails::Dollar.get_by_date(year,month,day)
 ```
 
 This method gets all values of Dollar given a particular month, it needs two arguments of type integer, year and month day, 
 it return an Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Dollar.get_by_month(year,month)
+SbifRails::Dollar.get_by_month(year,month)
 ```
 
 This method gets all values of Dollar given a specific day, it needs one argument of type integer, year, 
 it return Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Dollar.get_by_year(year)
+SbifRails::Dollar.get_by_year(year)
 ```
 
 ### Euro
@@ -71,27 +71,27 @@ This method gets the current value of Euro, it return a Currency object that hav
 value of type float and date of type date.
 
 ```ruby
-Sbif::Euro.get_current
+SbifRails::Euro.get_current
 ```
 This method gets all values of Euro given a specific day, it needs three arguments of type integer, year,month and day, 
 it return an Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Euro.get_by_date(year,month,day)
+SbifRails::Euro.get_by_date(year,month,day)
 ```
 
 This method gets all values of Euro given a specific month, it needs two arguments of type integer, year and month day, 
 it return an Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Euro.get_by_month(year,month)
+SbifRails::Euro.get_by_month(year,month)
 ```
 
 This method gets all values of Euro given a specific year, it needs one argument of type integer, year, 
 it return Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Euro.get_by_year(year)
+SbifRails::Euro.get_by_year(year)
 ```
 
 ### UF
@@ -100,27 +100,27 @@ This method gets the current value of Uf, it return a Currency object that have 
 value of type float and date of type date.
 
 ```ruby
-Sbif::Uf.get_current
+SbifRails::Uf.get_current
 ```
 This method gets all values of Uf given a specific day, it needs three arguments of type integer, year,month and day, 
 it return an Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Uf.get_by_date(year,month,day)
+SbifRails::Uf.get_by_date(year,month,day)
 ```
 
 This method gets all values of Uf given a specific month, it needs one argument of type integer, year, 
 it return an Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Uf.get_by_month(year,month)
+SbifRails::Uf.get_by_month(year,month)
 ```
 
 This method gets all values of Uf given a specific year, it needs one argument of type integer, year, 
 it return Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Uf.get_by_year(year)
+SbifRails::Uf.get_by_year(year)
 ```
 
 ### IPC
@@ -129,14 +129,14 @@ This method gets all values of IPC given a specific day, it needs two arguments 
 it return an Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Uf.get_by_month(year,month)
+SbifRails::Uf.get_by_month(year,month)
 ```
 
 This method gets all values of IPC given a specific year, it needs one argument of type integer, year,
 it return Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Uf.get_by_year(year)
+SbifRails::Uf.get_by_year(year)
 ```
 
 ### UTM
@@ -145,15 +145,20 @@ This method gets all values of UTM given a specific day, it needs two arguments 
 it return an Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Uf.get_by_month(year,month)
+SbifRails::Uf.get_by_month(year,month)
 ```
 
 This method gets all values of UTM given a specific day, it needs one argument of type integer, year,
 it return Array of Currency objects that its have two attributes, value of type float and date of type date.
 
 ```ruby
-Sbif::Uf.get_by_year(year)
+SbifRails::Uf.get_by_year(year)
 ```
+
+## Author
+Paulo Tarud C
+CTO
+SIDEKICK (http://www.sidekick.cl)
 
 ## Contributing
 
