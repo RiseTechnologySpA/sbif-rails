@@ -7,11 +7,14 @@ Gem::Specification.new do |spec|
   spec.name          = "sbif-rails"
   spec.version       = SbifRails::VERSION
   spec.authors       = ["Paulo Tarud"]
-  spec.email         = ["paulo@sidekick.cl"]
+  spec.email         = ["paulo@divisafe.com"]
   spec.summary       = %q{API Client for Chile SBIF}
   spec.description   = %q{API Client for Chile SBIF}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/RiseTechnology/sbif-rails"
   spec.license       = "MIT"
+
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = "https://github.com/RiseTechnology/sbif-rails"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
