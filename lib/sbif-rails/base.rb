@@ -18,10 +18,10 @@ module SbifRails
       currencies = Array.new
       currencies_response["#{plural_name}"].each do |currency|
         currency_date = currency['Fecha'].to_s.split('-')
-        date = Date.new(currency_date[0].to_i,currency_date[1].to_i,currency_date[2].to_i)
+        date = Date.new(currency_date[0].to_i, currency_date[1].to_i, currency_date[2].to_i)
         currencies << Currency.new(date, currency['Valor'].gsub('.', '').gsub(',', '.').to_f)
       end
-      return currencies
+      currencies
     end
 
     def get_by_year(year)
@@ -32,16 +32,16 @@ module SbifRails
       currencies = Array.new
       currencies_response["#{plural_name}"].each do |currency|
         currency_date = currency['Fecha'].to_s.split('-')
-        date = Date.new(currency_date[0].to_i,currency_date[1].to_i,currency_date[2].to_i)
+        date = Date.new(currency_date[0].to_i, currency_date[1].to_i, currency_date[2].to_i)
         currencies << Currency.new(date, currency['Valor'].gsub('.', '').gsub(',', '.').to_f)
       end
-      return currencies
+      currencies
     end
 
     module GetByDayMethods
       def get_current
         today = Date.today
-        return get_by_day(today.year, today.month, today.day)
+        get_by_day(today.year, today.month, today.day)
       end
 
       def get_by_day(year, month, day)
@@ -54,10 +54,10 @@ module SbifRails
           response = Net::HTTP.get uri
           currencies_response = JSON.parse response
           break if currencies_response["#{plural_name}"]
-					date -= 1
+          date -= 1
         end
-        currency = SbifRails::Currency.new(date,currencies_response["#{plural_name}"][0]['Valor'].gsub('.', '').gsub(',', '.').to_f)
-        return currency
+        currency = SbifRails::Currency.new(date, currencies_response["#{plural_name}"][0]['Valor'].gsub('.', '').gsub(',', '.').to_f)
+        currency
       end
     end
   end
