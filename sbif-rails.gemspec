@@ -23,4 +23,10 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+
+  spec.post_install_message = <<-MESSAGE
+    [DEPRECATION WARNING] The sbif-rails gem has been deprecated and has been replaced by sbif_rails.
+    See: https://rubygems.org/gems/sbif_rails
+    And: https://github.com/RiseTechnologySpA/sbif_rails
+  MESSAGE
 end

@@ -56,8 +56,7 @@ module SbifRails
           break if currencies_response["#{plural_name}"]
           date -= 1
         end
-        currency = SbifRails::Currency.new(date, currencies_response["#{plural_name}"][0]['Valor'].gsub('.', '').gsub(',', '.').to_f)
-        currency
+        Currency.new(date, currencies_response["#{plural_name}"][0]['Valor'].gsub('.', '').gsub(',', '.').to_f)
       end
     end
   end
