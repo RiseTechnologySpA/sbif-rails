@@ -4,7 +4,7 @@ require 'date'
 
 module SbifRails
   module Base
-    URL = 'http://api.sbif.cl/api-sbifv3/recursos_api'
+    URL = 'https://api.sbif.cl/api-sbifv3/recursos_api'
 
     def api_key
       @api_key ||= SbifRails.config.api_key
