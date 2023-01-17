@@ -12,9 +12,17 @@ module SbifRails
 
     def get_by_month(year, month)
       url = "#{URL}/#{name}/#{year.to_s}/#{month.to_s}?apikey=#{api_key}&formato=json"
-      uri = URI(url)
-      response = Net::HTTP.get uri
-      currencies_response = JSON.parse response
+      uri = URI.parse(url)
+      http = Net::HTTP.new(uri.host, uri.port)
+
+      # Activate SSL
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+      request = Net::HTTP::Get.new(uri.request_uri)
+      response = http.request(request)
+
+      currencies_response = JSON.parse response.body
       currencies = Array.new
       currencies_response["#{plural_name}"].each do |currency|
         currency_date = currency['Fecha'].to_s.split('-')
@@ -26,9 +34,17 @@ module SbifRails
 
     def get_by_year(year)
       url = "#{URL}/#{name}/#{year.to_s}?apikey=#{api_key}&formato=json"
-      uri = URI(url)
-      response = Net::HTTP.get uri
-      currencies_response = JSON.parse response
+      uri = URI.parse(url)
+      http = Net::HTTP.new(uri.host, uri.port)
+
+      # Activate SSL
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+      request = Net::HTTP::Get.new(uri.request_uri)
+      response = http.request(request)
+
+      currencies_response = JSON.parse response.body
       currencies = Array.new
       currencies_response["#{plural_name}"].each do |currency|
         currency_date = currency['Fecha'].to_s.split('-')
@@ -50,9 +66,18 @@ module SbifRails
         # looking for business day
         loop do
           url = "#{URL}/#{name}/#{date.year.to_s}/#{date.month.to_s}/dias/#{date.day}?apikey=#{api_key}&formato=json"
-          uri = URI(url)
-          response = Net::HTTP.get uri
-          currencies_response = JSON.parse response
+          uri = URI.parse(url)
+          http = Net::HTTP.new(uri.host, uri.port)
+
+          # Activate SSL
+          http.use_ssl = true
+          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+          request = Net::HTTP::Get.new(uri.request_uri)
+          response = http.request(request)
+
+          currencies_response = JSON.parse response.body
+
           break if currencies_response["#{plural_name}"]
           date -= 1
         end
